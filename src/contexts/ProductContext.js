@@ -1,11 +1,11 @@
 import React, {createContext, useState, useEffect} from 'react';
 
-//create context
 export const ProductContext = createContext()
 
 const ProductProvider = ({children}) => {
-  //product's state
+  
   const [products, setProducts] = useState([])
+  
   //fetch products
   useEffect(()=> {
     const fetchProducts = async () => {

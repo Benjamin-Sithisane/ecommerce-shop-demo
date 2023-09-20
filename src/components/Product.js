@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { BsPlus, BsEyeFill } from 'react-icons/bs'
 
 const Product = ({ product  }) => {
-  console.log(product)
+  
   //destructure product
-  const { id, image, category, title, price } = product
+  const { id, image, title, price } = product
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Product = ({ product  }) => {
           justify-center items-center'> 
             <img
               className='max-h-[160px] group-hover:scale-110' 
-              src={product.image}
+              src={image}
               alt=''
             />
           </div>
