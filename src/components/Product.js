@@ -42,7 +42,7 @@ const Product = ({ product  }) => {
       </div>
       <div>
         <Link to ={`/product/${id}`}>
-          <h2 className='font-semibold mb-1 justify-center'>{title}</h2>
+          <h2 className='font-semibold mb-1 justify-center hover:underline'>{title}</h2>
         </Link>
         <span>${price}</span>
       </div>

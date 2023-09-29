@@ -31,7 +31,7 @@ const Sidebar = () => {
           <IoMdArrowForward className='text-2x1'/>
         </div>
       </div>
-      <div>
+      <div className='flex-col'>
         {
           cart.map((item) => {
             return <CartItem item={item} key={item.id} />;
