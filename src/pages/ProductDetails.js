@@ -46,7 +46,7 @@ const ProductDetails = () => {
                 </h1>
                 <span className='mb-2'>{category}</span>
 
-                <div className='text-xl sm:text-sm text-red-500 font-medium 
+                <div className='text-xl text-red-500 font-medium 
                 mb-6'>
                   ${parseFloat(price).toFixed(2)}
                 </div>
