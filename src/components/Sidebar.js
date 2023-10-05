@@ -8,7 +8,8 @@ import { CartContext } from '../contexts/CartContext';
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext)
-  const { cart, clearCart } = useContext(CartContext)
+  const { cart, clearCart, total } = useContext(CartContext)
+  const { itemAmount } = useContext(CartContext)
   
   return (
     <div 
@@ -21,7 +22,7 @@ const Sidebar = () => {
       <div className='flex items-center justify-between py-6
       border-b'>
         <div className='uppercase text-sm 
-        font-semibold'>Cart (0)</div>
+        font-semibold'>Cart ({itemAmount})</div>
 
         <div
           onClick={handleClose} 
@@ -31,23 +32,31 @@ const Sidebar = () => {
           <IoMdArrowForward className='text-2x1'/>
         </div>
       </div>
-      <div className='flex-col'>
+      <div className='flex flex-col gap-y-2 h-[520px] lg:h-
+      [640px] overflow-y-auto overflow-x-hidden border-b'>
         {
           cart.map((item) => {
             return <CartItem item={item} key={item.id} />;
         })}
       </div>
-      <div className='bg-blue-200 flex flex-col gap-y-3 py-4 
-      mt-4'>
-        <div className='bg-blue-200 flex w-full justify-between items-center'>
+      <div className='flex flex-col gap-y-3 py-4 
+      mt-8'>
+        <div className='flex w-full justify-between items-center'>
           <div className='uppercase font-semibold'>
-            <div className='mr-2'><span>Total:   </span></div>
+            <div className='mr-2'><span>Total: </span>${parseFloat(total).toFixed(2)}</div>
           </div>
           <div onClick={clearCart} className='cursor-pointer py-4 bg-red-500 
           text-white w-12 h-12 flex justify-center items-center text-xl'>
             <FiTrash2 />
           </div>
         </div>
+        <Link 
+          to='/'
+          className='bg-black flex p-4 justify-center 
+          items-center text-primary w-full font-medium text-white mt-8'
+        >
+          CHECKOUT
+        </Link>
       </div>
     </div>
     )

@@ -44,7 +44,7 @@ const Product = ({ product  }) => {
         <Link to ={`/product/${id}`}>
           <h2 className='font-semibold mb-1 justify-center hover:underline'>{title}</h2>
         </Link>
-        <span>${price}</span>
+        <span>${parseFloat(price).toFixed(2)}</span>
       </div>
     </div>
   )
