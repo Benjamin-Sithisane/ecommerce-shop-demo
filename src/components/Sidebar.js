@@ -53,7 +53,7 @@ const Sidebar = () => {
         <Link 
           to='/'
           className='bg-black flex p-4 justify-center 
-          items-center text-primary w-full font-medium text-white mt-8'
+          items-center w-full font-medium text-white mt-8'
         >
           CHECKOUT
         </Link>
